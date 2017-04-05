@@ -6,16 +6,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var user_detail_component_1 = require("../user-detail.component/user-detail.component");
 var AppComponent = (function () {
     function AppComponent() {
+        this.heroes = HEROES;
+        this.testString = 'test';
     }
+    AppComponent.prototype.onSelectedHero = function (hero) {
+        console.log('HERO', hero);
+        this.selectedHero = hero;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
-        templateUrl: './app/app.component/app.component.html'
+        templateUrl: './app/Components/app.component/app.component.html',
+        directive: [user_detail_component_1.UserDetails]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
+var HEROES = [
+    { "id": 11, "name": "Mr. Nice" },
+    { "id": 12, "name": "Narco" },
+    { "id": 13, "name": "Bombasto" },
+    { "id": 14, "name": "Celeritas" },
+    { "id": 15, "name": "Magneta" },
+    { "id": 16, "name": "RubberMan" },
+    { "id": 17, "name": "Dynama" },
+    { "id": 18, "name": "Dr IQ" },
+    { "id": 19, "name": "Magma" },
+    { "id": 20, "name": "Tornado" }
+];
 //# sourceMappingURL=app.component.js.map

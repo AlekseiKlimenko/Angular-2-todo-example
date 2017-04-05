@@ -1,0 +1,11 @@
+<h1>App component start</h1>
+<h2>Users list</h2>
+<div>{{testString}}</div>
+<div *ngFor="let hero of heroes"
+    (click)="onSelectedHero(hero)"
+    [class.selected-user]="hero == selectedHero">
+    <div>User id: {{hero.id}}</div>
+    <div>User Name: {{hero.name}}</div>
+</div>
+<user-details [testStr]="testString" [hero]="selectedHero"></user-details>
+
