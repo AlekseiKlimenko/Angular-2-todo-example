@@ -8,29 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
+var core_1 = require("@angular/core");
+var task_1 = require("../../shared/task");
+var UserTask = (function () {
+    function UserTask() {
+        this.delete = new core_1.EventEmitter();
     }
-    return Hero;
-}());
-exports.Hero = Hero;
-var AppComponent = (function () {
-    function AppComponent() {
-        this.hero = {
-            name: "test",
-            id: 1
-        };
-    }
-    AppComponent = __decorate([
+    UserTask.prototype.deleteTask = function (event, taskId) {
+        event.preventDefault();
+        this.delete.emit(taskId);
+    };
+    ;
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', task_1.Task)
+    ], UserTask.prototype, "task", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], UserTask.prototype, "delete", void 0);
+    UserTask = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'app',
-            templateUrl: 'app.component.html'
+            selector: 'user-task',
+            templateUrl: 'user-task.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], UserTask);
+    return UserTask;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.UserTask = UserTask;
+//# sourceMappingURL=user-task.component.js.map

@@ -1,0 +1,11 @@
+<a class="col-md-12 one-task" href="#">
+    <div class="main-info-task col-md-11">
+        <p [innerText] = "task.name" class="title">Новоя задача</p>
+        <p [innerText] = "task.description" class="task-text"></p>
+    </div>
+    <div class="main-info-create col-md-1">
+        <p [innerText] = "task.time" class="time-create"></p>
+        <p [innerText] = "task.importance" class="difficulty-level-create" title="green"></p>
+        <button (click)="deleteTask($event, task.id)">Удалить</button>
+    </div>
+</a>
